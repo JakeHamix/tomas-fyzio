@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fyzioterapie v&nbsp;Ostrově — Tomáš Vonášek</title>
+    <meta name="description" content="Odborná fyzioterapie, wellness pobyty a&nbsp;pronájem prostoru v&nbsp;klidné obci Ostrov. Intenzivní kempy, víkendové pobyty, sauna a&nbsp;vířivka.">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        stone: {
+                            50: '#FAFAF9',
+                            100: '#F5F5F4',
+                            200: '#E7E5E4',
+                            300: '#D6D3D1',
+                        },
+                        forest: {
+                            DEFAULT: '#2D4A3E',
+                            light: '#3D6B5A',
+                            dark: '#1A2E26',
+                        },
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'Georgia', 'serif'],
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* Smooth scrolling */
+        html { scroll-behavior: smooth; }
+
+        /* Fade-in animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Hero parallax-like overlay */
+        .hero-overlay {
+            background: linear-gradient(
+                to bottom,
+                rgba(26, 46, 38, 0.55) 0%,
+                rgba(26, 46, 38, 0.35) 50%,
+                rgba(26, 46, 38, 0.65) 100%
+            );
+        }
+
+        /* Subtle separator */
+        .section-divider {
+            width: 48px;
+            height: 2px;
+            background-color: #2D4A3E;
+            opacity: 0.3;
+        }
+    </style>
+</head>
+
+<body class="font-sans text-stone-800 bg-stone-50 antialiased">
+
+    <!-- ═══════════════════════════════════════════════ -->
+    <!-- NAVIGACE                                        -->
+    <!-- ═══════════════════════════════════════════════ -->
+    <nav class="fixed top-0 left-0 right-0 z-50 transition-all duration-500" id="navbar">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="#" class="font-serif text-xl md:text-2xl text-white tracking-wide">
+                Fyzioterapie v&nbsp;Ostrově
+            </a>
+            <div class="hidden md:flex items-center gap-8 text-sm text-white/90 font-light tracking-wide">
+                <a href="#sluzby" class="hover:text-white transition-colors">Služby</a>
+                <a href="#ubytovani" class="hover:text-white transition-colors">Ubytování</a>
+                <a href="#cenik" class="hover:text-white transition-colors">Ceník</a>
+                <a href="#kontakt" class="hover:text-white transition-colors">Kontakt</a>
+            </div>
+            <a href="https://wa.me/420777296426?text=Dobr%C3%BD%20den%2C%20m%C3%A1m%20z%C3%A1jem%20o%20term%C3%ADn%20v%20Ostrov%C4%9B."
+               class="md:hidden text-white/90 hover:text-white transition-colors">
+                <i data-lucide="message-circle" class="w-6 h-6"></i>
+            </a>
+        </div>
+    </nav>
+
+    <!-- ═══════════════════════════════════════════════ -->
+    <!-- HERO                                            -->
+    <!-- ═══════════════════════════════════════════════ -->
+    <section class="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1920&q=80"
+             alt="Klidná krajina"
+             class="absolute inset-0 w-full h-full object-cover">
+        <div class="hero-overlay absolute inset-0"></div>
+        <div class="relative z-10 text-center px-6 max-w-3xl">
+            <p class="text-white/70 font-sans text-sm md:text-base tracking-[0.3em] uppercase mb-6 fade-in">
+                Tomáš Vonášek
+            </p>
+            <h1 class="font-serif text-4xl md:text-6xl lg:text-7xl text-white leading-tight mb-6 fade-in">
+                Fyzioterapie<br>a&nbsp;klid v&nbsp;Ostrově
+            </h1>
+            <p class="text-white/80 font-light text-lg md:text-xl leading-relaxed max-w-xl mx-auto mb-10 fade-in">
+                Odborná péče o&nbsp;pohybový aparát v&nbsp;klidné obci, kde je&nbsp;ticho součástí terapie.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center fade-in">
+                <a href="#sluzby"
+                   class="inline-block px-8 py-3.5 border border-white/40 text-white text-sm tracking-widest uppercase hover:bg-white/10 transition-all">
+                    Zjistit více
+                </a>
+                <a href="https://wa.me/420777296426?text=Dobr%C3%BD%20den%2C%20m%C3%A1m%20z%C3%A1jem%20o%20term%C3%ADn%20v%20Ostrov%C4%9B."
+                   class="inline-block px-8 py-3.5 bg-white text-forest text-sm tracking-widest uppercase hover:bg-stone-100 transition-all">
+                    Rezervovat
+                </a>
+            </div>
+        </div>
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/50 animate-bounce">
+            <i data-lucide="chevron-down" class="w-6 h-6"></i>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════ -->
+    <!-- ÚVOD                                            -->
+    <!-- ═══════════════════════════════════════════════ -->
+    <section class="py-24 md:py-32 px-6">
+        <div class="max-w-3xl mx-auto text-center fade-in">
+            <div class="section-divider mx-auto mb-8"></div>
+            <h2 class="font-serif text-3xl md:text-4xl mb-6 text-forest-dark">
+                Prostor pro&nbsp;regeneraci těla i&nbsp;mysli
+            </h2>
+            <p class="text-stone-600 font-light text-lg leading-relaxed">
+                V&nbsp;malé obci Ostrov, daleko od&nbsp;ruchu města, nabízíme odbornou fyzioterapii,
+                wellness pobyty a&nbsp;zázemí pro&nbsp;skupinové akce. Problémy dnešní doby vznikají
+                často z&nbsp;přemíry podnětů — u&nbsp;nás najdete klid, který je&nbsp;součástí léčby.
+            </p>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════ -->
+    <!-- SLUŽBY                                          -->
+    <!-- ═══════════════════════════════════════════════ -->
+    <section id="sluzby" class="py-24 md:py-32 px-6 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16 fade-in">
+                <p class="text-forest/60 text-sm tracking-[0.25em] uppercase mb-3">Co nabízíme</p>
+                <h2 class="font-serif text-3xl md:text-4xl text-forest-dark">Naše služby</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 lg:gap-12">
+                <!-- Odborná péče -->
+                <div class="group fade-in">
+                    <div class="overflow-hidden mb-6">
+                        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80"
+                             alt="Fyzioterapie"
+                             class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <i data-lucide="heart-pulse" class="w-5 h-5 text-forest"></i>
+                        <h3 class="font-serif text-xl md:text-2xl text-forest-dark">Odborná péče</h3>
+                    </div>
+                    <p class="text-stone-600 font-light leading-relaxed mb-4">
+                        Intenzivní 4denní kemp zaměřený na&nbsp;problémy s&nbsp;pohybovým ústrojím,
+                        především s&nbsp;ploténkami. Terapie 2× denně po&nbsp;30 minutách,
+                        společné semináře Školy zad a&nbsp;tejpování.
+                    </p>
+                    <p class="text-sm text-stone-400 font-light">
+                        Kempy se konají především v&nbsp;době prázdnin.
+                    </p>
+                </div>
+
+                <!-- Wellness -->
+                <div class="group fade-in">
+                    <div class="overflow-hidden mb-6">
+                        <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80"
+                             alt="Wellness a relaxace"
+                             class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <i data-lucide="sparkles" class="w-5 h-5 text-forest"></i>
+                        <h3 class="font-serif text-xl md:text-2xl text-forest-dark">Wellness víkendy</h3>
+                    </div>
+                    <p class="text-stone-600 font-light leading-relaxed mb-4">
+                        Víkendový pobyt s&nbsp;balíčkem společného cvičení a&nbsp;individuální
+                        45minutové masáže každý den. Sauna a&nbsp;vířivka k&nbsp;dispozici
+                        po&nbsp;celou dobu pobytu.
+                    </p>
+                    <p class="text-sm text-stone-400 font-light">
+                        Odpolední program je&nbsp;individuální — odpočívejte podle svého.
+                    </p>
+                </div>
+
+                <!-- Pronájem prostoru -->
+                <div class="group fade-in">
+                    <div class="overflow-hidden mb-6">
+                        <img src="https://images.unsplash.com/photo-1588286840104-8957b019727f?auto=format&fit=crop&w=800&q=80"
+                             alt="Skupinové aktivity"
+                             class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <i data-lucide="users" class="w-5 h-5 text-forest"></i>
+                        <h3 class="font-serif text-xl md:text-2xl text-forest-dark">Pronájem prostoru</h3>
+                    </div>
+                    <p class="text-stone-600 font-light leading-relaxed mb-4">
+                        Ideální zázemí pro&nbsp;skupiny s&nbsp;vlastním programem — jóga,
+                        teambuilding, výjezdní zasedání. K&nbsp;ubytování nabízíme
+                        masáže, rehabilitační cvičení a&nbsp;terapie.
+                    </p>
+                    <p class="text-sm text-stone-400 font-light">
+                        Všechny skupiny mohou využít saunu i&nbsp;vířivku.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════ -->
+    <!-- UBYTOVÁNÍ & LOKALITA                            -->
+    <!-- ═══════════════════════════════════════════════ -->
+    <section id="ubytovani" class="py-24 md:py-32 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
+                <div class="fade-in">
+                    <div class="grid grid-cols-2 gap-4">
+                        <img src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&w=600&q=80"
+                             alt="Ubytování"
+                             class="w-full h-48 md:h-56 object-cover col-span-2">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=400&q=80"
+                             alt="Interiér"
+                             class="w-full h-40 object-cover">
+                        <img src="https://images.unsplash.com/photo-1523413363574-c30aa1c2a516?auto=format&fit=crop&w=400&q=80"
+                             alt="Krajina v okolí"
+                             class="w-full h-40 object-cover">
+                    </div>
+                </div>
+                <div class="fade-in">
+                    <p class="text-forest/60 text-sm tracking-[0.25em] uppercase mb-3">Kde vás ubytujeme</p>
+                    <h2 class="font-serif text-3xl md:text-4xl text-forest-dark mb-6">
+                        Ubytování a&nbsp;okolí
+                    </h2>
+                    <div class="space-y-4 text-stone-600 font-light leading-relaxed">
+                        <p>
+                            Kapacita až 12 hostů — ve&nbsp;2 dvoulůžkových apartmánech
+                            a&nbsp;v&nbsp;bytě se&nbsp;čtyřmi dvoulůžky. Ideální pro&nbsp;páry
+                            od&nbsp;40 let i&nbsp;ucelené skupiny.
+                        </p>
+                        <p>
+                            Ubytování je&nbsp;v&nbsp;malé klidné vesnici, kde dodržování klidu
+                            je&nbsp;součástí terapie. Obcí prochází cyklostezka s&nbsp;možností
+                            výletů do&nbsp;Brd.
+                        </p>
+                        <p>
+                            Na&nbsp;dosah jsou zámky v&nbsp;Březnici, Blatné a&nbsp;Orlíku,
+                            města Příbram a&nbsp;Písek — ideální pro&nbsp;výlety vlakem či autem.
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap gap-3 mt-8">
+                        <span class="inline-flex items-center gap-2 px-4 py-2 bg-forest/5 text-forest text-sm">
+                            <i data-lucide="bike" class="w-4 h-4"></i> Cyklostezky
+                        </span>
+                        <span class="inline-flex items-center gap-2 px-4 py-2 bg-forest/5 text-forest text-sm">
+                            <i data-lucide="trees" class="w-4 h-4"></i> Brdy
+                        </span>
+                        <span class="inline-flex items-center gap-2 px-4 py-2 bg-forest/5 text-forest text-sm">
+                            <i data-lucide="landmark" class="w-4 h-4"></i> Zámky
+                        </span>
+                        <span class="inline-flex items-center gap-2 px-4 py-2 bg-forest/5 text-forest text-sm">
+                            <i data-lucide="volume-x" class="w-4 h-4"></i> Klid
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════ -->
+    <!-- STRAVA & ZÁŽITKY                                -->
+    <!-- ═══════════════════════════════════════════════ -->
+    <section class="py-24 md:py-32 px-6 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
+                <div class="fade-in md:order-2">
+                    <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=800&q=80"
+                         alt="Stravování"
+                         class="w-full h-72 md:h-96 object-cover">
+                </div>
+                <div class="fade-in md:order-1">
+                    <p class="text-forest/60 text-sm tracking-[0.25em] uppercase mb-3">Péče o&nbsp;tělo i&nbsp;duši</p>
+                    <h2 class="font-serif text-3xl md:text-4xl text-forest-dark mb-6">
+                        Strava a&nbsp;zážitky
+                    </h2>
+                    <div class="space-y-4 text-stone-600 font-light leading-relaxed">
+                        <p>
+                            Snídaně zajišťujeme přímo na&nbsp;místě. Oběd i&nbsp;večeři
+                            lze řešit v&nbsp;místní restauraci, vlastní přípravou nebo
+                            formou cateringu. Možné je&nbsp;i&nbsp;společné grilování.
+                        </p>
+                    </div>
+                    <div class="mt-8 space-y-3">
+                        <div class="flex items-start gap-3">
+                            <i data-lucide="flame" class="w-5 h-5 text-forest mt-0.5"></i>
+                            <p class="text-stone-600 font-light">Posezení u&nbsp;ohně s&nbsp;kytarou</p>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i data-lucide="wine" class="w-5 h-5 text-forest mt-0.5"></i>
+                            <p class="text-stone-600 font-light">Degustace vín <span class="text-stone-400">(za&nbsp;příplatek)</span></p>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i data-lucide="chef-hat" class="w-5 h-5 text-forest mt-0.5"></i>
+                            <p class="text-stone-600 font-light">Tématický večer s&nbsp;kuchařem <span class="text-stone-400">(za&nbsp;příplatek)</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════ -->
+    <!-- CENÍK                                           -->
+    <!-- ═══════════════════════════════════════════════ -->
+    <section id="cenik" class="py-24 md:py-32 px-6">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16 fade-in">
+                <p class="text-forest/60 text-sm tracking-[0.25em] uppercase mb-3">Ceník pobytů</p>
+                <h2 class="font-serif text-3xl md:text-4xl text-forest-dark">Kolik to&nbsp;stojí</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 fade-in">
+                <!-- Odborná péče -->
+                <div class="border border-stone-200 p-8 md:p-10 text-center hover:border-forest/30 transition-colors">
+                    <div class="inline-flex items-center justify-center w-12 h-12 bg-forest/5 mb-6">
+                        <i data-lucide="heart-pulse" class="w-6 h-6 text-forest"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl text-forest-dark mb-2">Odborná péče</h3>
+                    <p class="text-stone-500 font-light text-sm mb-6">4 noci, intenzivní program</p>
+                    <p class="font-serif text-4xl md:text-5xl text-forest-dark mb-2">
+                        12&nbsp;500 <span class="text-xl">Kč</span>
+                    </p>
+                    <p class="text-stone-400 text-sm font-light mb-8">za&nbsp;osobu</p>
+                    <ul class="text-left text-stone-600 font-light text-sm space-y-2 mb-8">
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check" class="w-4 h-4 text-forest mt-0.5 flex-shrink-0"></i>
+                            Terapie 2× denně po&nbsp;30 min
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check" class="w-4 h-4 text-forest mt-0.5 flex-shrink-0"></i>
+                            Seminář Školy zad (45&nbsp;min/den)
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check" class="w-4 h-4 text-forest mt-0.5 flex-shrink-0"></i>
+                            Tejpování
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check" class="w-4 h-4 text-forest mt-0.5 flex-shrink-0"></i>
+                            Sauna a&nbsp;vířivka
+                        </li>
+                    </ul>
+                    <a href="https://wa.me/420777296426?text=Dobr%C3%BD%20den%2C%20m%C3%A1m%20z%C3%A1jem%20o%20Odbornou%20p%C3%A9%C4%8Di%20v%20Ostrov%C4%9B."
+                       class="inline-block w-full px-6 py-3 bg-forest text-white text-sm tracking-widest uppercase hover:bg-forest-dark transition-colors">
+                        Mám zájem
+                    </a>
+                </div>
+
+                <!-- Wellness -->
+                <div class="border border-stone-200 p-8 md:p-10 text-center hover:border-forest/30 transition-colors">
+                    <div class="inline-flex items-center justify-center w-12 h-12 bg-forest/5 mb-6">
+                        <i data-lucide="sparkles" class="w-6 h-6 text-forest"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl text-forest-dark mb-2">Wellness víkend</h3>
+                    <p class="text-stone-500 font-light text-sm mb-6">2 noci, relaxační program</p>
+                    <p class="font-serif text-4xl md:text-5xl text-forest-dark mb-2">
+                        6&nbsp;000 <span class="text-xl">Kč</span>
+                    </p>
+                    <p class="text-stone-400 text-sm font-light mb-8">za&nbsp;osobu</p>
+                    <ul class="text-left text-stone-600 font-light text-sm space-y-2 mb-8">
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check" class="w-4 h-4 text-forest mt-0.5 flex-shrink-0"></i>
+                            Společné cvičení
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check" class="w-4 h-4 text-forest mt-0.5 flex-shrink-0"></i>
+                            Individuální masáž 45&nbsp;min/den
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check" class="w-4 h-4 text-forest mt-0.5 flex-shrink-0"></i>
+                            Sauna a&nbsp;vířivka
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check" class="w-4 h-4 text-forest mt-0.5 flex-shrink-0"></i>
+                            Volný odpolední program
+                        </li>
+                    </ul>
+                    <a href="https://wa.me/420777296426?text=Dobr%C3%BD%20den%2C%20m%C3%A1m%20z%C3%A1jem%20o%20Wellness%20v%C3%ADkend%20v%20Ostrov%C4%9B."
+                       class="inline-block w-full px-6 py-3 bg-forest text-white text-sm tracking-widest uppercase hover:bg-forest-dark transition-colors">
+                        Mám zájem
+                    </a>
+                </div>
+            </div>
+
+            <p class="text-center text-stone-400 text-sm font-light mt-8 fade-in">
+                Pronájem prostoru pro&nbsp;skupiny — cena dle&nbsp;domluvy.
+                <a href="https://wa.me/420777296426?text=Dobr%C3%BD%20den%2C%20m%C3%A1m%20z%C3%A1jem%20o%20pron%C3%A1jem%20prostoru%20v%20Ostrov%C4%9B."
+                   class="text-forest underline underline-offset-4 hover:text-forest-dark transition-colors">
+                    Napište nám
+                </a>
+            </p>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════ -->
+    <!-- KONTAKT                                         -->
+    <!-- ═══════════════════════════════════════════════ -->
+    <section id="kontakt" class="relative py-24 md:py-32 px-6 overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1920&q=80"
+             alt="Les"
+             class="absolute inset-0 w-full h-full object-cover">
+        <div class="hero-overlay absolute inset-0"></div>
+
+        <div class="relative z-10 max-w-3xl mx-auto text-center">
+            <div class="fade-in">
+                <p class="text-white/60 text-sm tracking-[0.25em] uppercase mb-3">Ozvěte se&nbsp;nám</p>
+                <h2 class="font-serif text-3xl md:text-5xl text-white mb-4">
+                    Rezervujte si&nbsp;svůj pobyt
+                </h2>
+                <p class="text-white/70 font-light text-lg mb-10 max-w-lg mx-auto">
+                    Napište nám přes&nbsp;WhatsApp, zavolejte nebo pošlete e-mail.
+                    Rádi vám poradíme s&nbsp;výběrem termínu.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4 justify-center mb-10">
+                    <a href="https://wa.me/420777296426?text=Dobr%C3%BD%20den%2C%20m%C3%A1m%20z%C3%A1jem%20o%20term%C3%ADn%20v%20Ostrov%C4%9B."
+                       class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-white text-forest text-sm tracking-widest uppercase hover:bg-stone-100 transition-all">
+                        <i data-lucide="message-circle" class="w-5 h-5"></i>
+                        Napsat přes&nbsp;WhatsApp
+                    </a>
+                    <a href="tel:+420777296426"
+                       class="inline-flex items-center justify-center gap-3 px-8 py-4 border border-white/40 text-white text-sm tracking-widest uppercase hover:bg-white/10 transition-all">
+                        <i data-lucide="phone" class="w-5 h-5"></i>
+                        Zavolat
+                    </a>
+                </div>
+
+                <a href="mailto:Tomas.Vonasek@seznam.cz"
+                   class="inline-flex items-center gap-2 text-white/60 hover:text-white/90 transition-colors text-sm font-light">
+                    <i data-lucide="mail" class="w-4 h-4"></i>
+                    Tomas.Vonasek@seznam.cz
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════ -->
+    <!-- PATIČKA                                         -->
+    <!-- ═══════════════════════════════════════════════ -->
+    <footer class="py-12 px-6 bg-forest-dark text-white/50">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="text-center md:text-left">
+                <p class="font-serif text-lg text-white/80 mb-1">Fyzioterapie v&nbsp;Ostrově</p>
+                <p class="text-sm font-light">Tomáš Vonášek · +420 777 296 426</p>
+            </div>
+            <div class="flex items-center gap-6 text-sm font-light">
+                <a href="#sluzby" class="hover:text-white/80 transition-colors">Služby</a>
+                <a href="#ubytovani" class="hover:text-white/80 transition-colors">Ubytování</a>
+                <a href="#cenik" class="hover:text-white/80 transition-colors">Ceník</a>
+                <a href="#kontakt" class="hover:text-white/80 transition-colors">Kontakt</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ═══════════════════════════════════════════════ -->
+    <!-- SKRIPTY                                         -->
+    <!-- ═══════════════════════════════════════════════ -->
+    <script>
+        // Inicializace ikon Lucide
+        lucide.createIcons();
+
+        // Animace při scrollu (Intersection Observer)
+        const fadeElements = document.querySelectorAll('.fade-in');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -40px 0px'
+        });
+        fadeElements.forEach((el) => observer.observe(el));
+
+        // Změna navigace při scrollu
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 80) {
+                navbar.classList.add('bg-forest-dark/95', 'backdrop-blur-sm', 'shadow-lg');
+            } else {
+                navbar.classList.remove('bg-forest-dark/95', 'backdrop-blur-sm', 'shadow-lg');
+            }
+        });
+    </script>
+
+</body>
+</html>
