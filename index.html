@@ -424,6 +424,138 @@
     </section>
 
     <!-- ═══════════════════════════════════════════════ -->
+    <!-- OHLASY KLIENTŮ                                  -->
+    <!-- ═══════════════════════════════════════════════ -->
+    <section class="py-24 md:py-32 px-6 bg-stone-50 dark:bg-night-light">
+        <div class="max-w-3xl mx-auto">
+            <div class="text-center mb-16 fade-in">
+                <div class="section-divider mx-auto mb-6"></div>
+                <p class="text-forest/60 dark:text-forest-light/60 text-sm tracking-[0.25em] uppercase mb-3">Ohlasy</p>
+                <h2 class="font-serif text-3xl md:text-4xl text-forest-dark dark:text-stone-100">Co&nbsp;říkají naši klienti</h2>
+            </div>
+
+            <div id="testimonial-carousel" class="relative fade-in">
+                <!-- Arrows -->
+                <button id="tc-prev" aria-label="Předchozí ohlas"
+                    class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-14 z-10 w-10 h-10 flex items-center justify-center rounded-full bg-white dark:bg-night-card border border-stone-200 dark:border-stone-600 shadow-md hover:border-forest/40 dark:hover:border-forest-light/40 transition-colors">
+                    <i data-lucide="chevron-left" class="w-5 h-5 text-forest-dark dark:text-stone-300"></i>
+                </button>
+                <button id="tc-next" aria-label="Další ohlas"
+                    class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-14 z-10 w-10 h-10 flex items-center justify-center rounded-full bg-white dark:bg-night-card border border-stone-200 dark:border-stone-600 shadow-md hover:border-forest/40 dark:hover:border-forest-light/40 transition-colors">
+                    <i data-lucide="chevron-right" class="w-5 h-5 text-forest-dark dark:text-stone-300"></i>
+                </button>
+
+                <!-- Track -->
+                <div class="overflow-hidden">
+                    <div id="tc-track" class="flex transition-transform duration-500 ease-out">
+                        <!-- Slide 1 -->
+                        <div class="w-full flex-shrink-0 px-2">
+                            <div class="bg-white dark:bg-night-card border border-stone-200 dark:border-stone-700 p-10 md:p-12 text-center">
+                                <div class="flex gap-1 justify-center mb-5">
+                                    <i data-lucide="star" class="w-4 h-4 text-amber-400 fill-amber-400"></i>
+                                    <i data-lucide="star" class="w-4 h-4 text-amber-400 fill-amber-400"></i>
+                                    <i data-lucide="star" class="w-4 h-4 text-amber-400 fill-amber-400"></i>
+                                    <i data-lucide="star" class="w-4 h-4 text-amber-400 fill-amber-400"></i>
+                                    <i data-lucide="star" class="w-4 h-4 text-amber-400 fill-amber-400"></i>
+                                </div>
+                                <p class="text-stone-600 dark:text-stone-400 font-light italic text-lg leading-relaxed mb-6">
+                                    „Po&nbsp;letech bolestí zad jsem konečně našla někoho, kdo mi opravdu pomohl.
+                                    Tomáš je nesmírně pečlivý a&nbsp;po&nbsp;každém sezení cítím obrovský rozdíl.
+                                    Prostředí je krásné a&nbsp;klidné — ideální pro&nbsp;regeneraci."
+                                </p>
+                                <p class="text-forest-dark dark:text-stone-200 text-sm font-medium">Jana Kovářová</p>
+                                <p class="text-stone-400 dark:text-stone-500 text-xs font-light">Individuální fyzioterapie</p>
+                            </div>
+                        </div>
+                        <!-- Slide 2 -->
+                        <div class="w-full flex-shrink-0 px-2">
+                            <div class="bg-white dark:bg-night-card border border-stone-200 dark:border-stone-700 p-10 md:p-12 text-center">
+                                <div class="flex gap-1 justify-center mb-5">
+                                    <i data-lucide="star" class="w-4 h-4 text-amber-400 fill-amber-400"></i>
+                                    <i data-lucide="star" class="w-4 h-4 text-amber-400 fill-amber-400"></i>
+                                    <i data-lucide="star" class="w-4 h-4 text-amber-400 fill-amber-400"></i>
+                                    <i data-lucide="star" class="w-4 h-4 text-amber-400 fill-amber-400"></i>
+                                    <i data-lucide="star" class="w-4 h-4 text-amber-400 fill-amber-400"></i>
+                                </div>
+                                <p class="text-stone-600 dark:text-stone-400 font-light italic text-lg leading-relaxed mb-6">
+                                    „S&nbsp;manželkou jsme strávili wellness víkend a&nbsp;bylo to nad&nbsp;očekávání.
+                                    Sauna, vířivka, skvělé jídlo a&nbsp;k&nbsp;tomu masáž od&nbsp;profesionála.
+                                    Už plánujeme další návštěvu."
+                                </p>
+                                <p class="text-forest-dark dark:text-stone-200 text-sm font-medium">Martin Procházka</p>
+                                <p class="text-stone-400 dark:text-stone-500 text-xs font-light">Wellness víkend pro&nbsp;páry</p>
+                            </div>
+                        </div>
+                        <!-- Slide 3 -->
+                        <div class="w-full flex-shrink-0 px-2">
+                            <div class="bg-white dark:bg-night-card border border-stone-200 dark:border-stone-700 p-10 md:p-12 text-center">
+                                <div class="flex gap-1 justify-center mb-5">
+                                    <i data-lucide="star" class="w-4 h-4 text-amber-400 fill-amber-400"></i>
+                                    <i data-lucide="star" class="w-4 h-4 text-amber-400 fill-amber-400"></i>
+                                    <i data-lucide="star" class="w-4 h-4 text-amber-400 fill-amber-400"></i>
+                                    <i data-lucide="star" class="w-4 h-4 text-amber-400 fill-amber-400"></i>
+                                    <i data-lucide="star" class="w-4 h-4 text-amber-400 fill-amber-400"></i>
+                                </div>
+                                <p class="text-stone-600 dark:text-stone-400 font-light italic text-lg leading-relaxed mb-6">
+                                    „Školu zad doporučuji každému, kdo sedí celý den v&nbsp;kanceláři.
+                                    Za&nbsp;tři dny jsem se naučila cviky, které dělám dodnes.
+                                    Navíc krásná příroda kolem — člověk si konečně odpočine."
+                                </p>
+                                <p class="text-forest-dark dark:text-stone-200 text-sm font-medium">Hana Dvořáková</p>
+                                <p class="text-stone-400 dark:text-stone-500 text-xs font-light">Odborná péče — Škola zad</p>
+                            </div>
+                        </div>
+                        <!-- Slide 4 -->
+                        <div class="w-full flex-shrink-0 px-2">
+                            <div class="bg-white dark:bg-night-card border border-stone-200 dark:border-stone-700 p-10 md:p-12 text-center">
+                                <div class="flex gap-1 justify-center mb-5">
+                                    <i data-lucide="star" class="w-4 h-4 text-amber-400 fill-amber-400"></i>
+                                    <i data-lucide="star" class="w-4 h-4 text-amber-400 fill-amber-400"></i>
+                                    <i data-lucide="star" class="w-4 h-4 text-amber-400 fill-amber-400"></i>
+                                    <i data-lucide="star" class="w-4 h-4 text-amber-400 fill-amber-400"></i>
+                                    <i data-lucide="star" class="w-4 h-4 text-amber-400 fill-amber-400"></i>
+                                </div>
+                                <p class="text-stone-600 dark:text-stone-400 font-light italic text-lg leading-relaxed mb-6">
+                                    „Pronajali jsme si prostor na&nbsp;víkendový teambuilding a&nbsp;bylo to skvělé.
+                                    Klidné prostředí, sauna po&nbsp;celodenním programu a&nbsp;Tomáš nám ještě
+                                    připravil skupinové cvičení. Kolegyně byly nadšené."
+                                </p>
+                                <p class="text-forest-dark dark:text-stone-200 text-sm font-medium">Petr Novotný</p>
+                                <p class="text-stone-400 dark:text-stone-500 text-xs font-light">Pronájem prostoru — teambuilding</p>
+                            </div>
+                        </div>
+                        <!-- Slide 5 -->
+                        <div class="w-full flex-shrink-0 px-2">
+                            <div class="bg-white dark:bg-night-card border border-stone-200 dark:border-stone-700 p-10 md:p-12 text-center">
+                                <div class="flex gap-1 justify-center mb-5">
+                                    <i data-lucide="star" class="w-4 h-4 text-amber-400 fill-amber-400"></i>
+                                    <i data-lucide="star" class="w-4 h-4 text-amber-400 fill-amber-400"></i>
+                                    <i data-lucide="star" class="w-4 h-4 text-amber-400 fill-amber-400"></i>
+                                    <i data-lucide="star" class="w-4 h-4 text-amber-400 fill-amber-400"></i>
+                                    <i data-lucide="star" class="w-4 h-4 text-amber-400 fill-amber-400"></i>
+                                </div>
+                                <p class="text-stone-600 dark:text-stone-400 font-light italic text-lg leading-relaxed mb-6">
+                                    „Jezdím k&nbsp;Tomášovi pravidelně už druhý rok. Kombinace fyzioterapie
+                                    a&nbsp;pobytu v&nbsp;přírodě je přesně to, co potřebuji. Vždy odcházím
+                                    jako nový člověk — a&nbsp;to říkám jako věčný skeptik."
+                                </p>
+                                <p class="text-forest-dark dark:text-stone-200 text-sm font-medium">Lucie Šímová</p>
+                                <p class="text-stone-400 dark:text-stone-500 text-xs font-light">Pravidelná klientka</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dots + counter -->
+                <div class="flex items-center justify-center gap-3 mt-8">
+                    <div class="flex gap-2" id="testimonial-dots"></div>
+                    <span id="tc-counter" class="text-stone-400 dark:text-stone-500 text-xs font-light ml-2">1 / 5</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════ -->
     <!-- CENÍK                                           -->
     <!-- ═══════════════════════════════════════════════ -->
     <section id="cenik" class="py-24 md:py-32 px-6">
@@ -589,6 +721,31 @@
     </section>
 
     <!-- ═══════════════════════════════════════════════ -->
+    <!-- MAPA                                            -->
+    <!-- ═══════════════════════════════════════════════ -->
+    <section class="py-16 md:py-24 px-6 bg-stone-50 dark:bg-night-light">
+        <div class="max-w-4xl mx-auto text-center fade-in">
+            <p class="text-forest/60 dark:text-forest-light/60 text-sm tracking-[0.25em] uppercase mb-3">Lokace</p>
+            <h2 class="font-serif text-2xl md:text-3xl text-forest-dark dark:text-stone-100 mb-8">Kde nás najdete</h2>
+            <div class="overflow-hidden rounded-lg shadow-lg">
+                <iframe
+                    src="https://maps.google.com/maps?q=Ostrov+u+B%C5%99eznice,+Czech+Republic&t=&z=12&ie=UTF8&iwloc=&output=embed"
+                    width="100%"
+                    height="350"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    class="w-full grayscale-[30%] dark:invert dark:hue-rotate-180"
+                    title="Mapa — Ostrov u&nbsp;Březnice"></iframe>
+            </div>
+            <p class="text-stone-500 dark:text-stone-400 font-light text-sm mt-4">
+                Ostrov u&nbsp;Březnice · nedaleko Příbrami a&nbsp;Písku
+            </p>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════ -->
     <!-- PATIČKA                                         -->
     <!-- ═══════════════════════════════════════════════ -->
     <footer class="py-12 px-6 bg-forest-dark text-white/50">
@@ -645,6 +802,70 @@
                 navbar.classList.remove('bg-forest-dark/95', 'backdrop-blur-sm', 'shadow-lg');
             }
         });
+
+        // Karusel ohlasů
+        (function() {
+            var track = document.getElementById('tc-track');
+            var slides = track.children;
+            var total = slides.length;
+            var current = 0;
+            var timer;
+            var INTERVAL = 6000;
+            var dotsContainer = document.getElementById('testimonial-dots');
+            var counter = document.getElementById('tc-counter');
+            var carousel = document.getElementById('testimonial-carousel');
+            var prevBtn = document.getElementById('tc-prev');
+            var nextBtn = document.getElementById('tc-next');
+
+            // Create dots
+            for (var i = 0; i < total; i++) {
+                var dot = document.createElement('button');
+                dot.className = 'w-2 h-2 rounded-full transition-all duration-300 ' +
+                    (i === 0 ? 'bg-forest dark:bg-forest-light w-4' : 'bg-stone-300 dark:bg-stone-600');
+                dot.setAttribute('aria-label', 'Ohlas ' + (i + 1));
+                (function(idx) { dot.addEventListener('click', function() { goTo(idx); }); })(i);
+                dotsContainer.appendChild(dot);
+            }
+
+            function goTo(index) {
+                current = ((index % total) + total) % total;
+                track.style.transform = 'translateX(-' + (current * 100) + '%)';
+                updateDots();
+                counter.textContent = (current + 1) + ' / ' + total;
+                resetTimer();
+            }
+
+            function updateDots() {
+                var dots = dotsContainer.children;
+                for (var j = 0; j < dots.length; j++) {
+                    dots[j].className = j === current
+                        ? 'w-4 h-2 rounded-full transition-all duration-300 bg-forest dark:bg-forest-light'
+                        : 'w-2 h-2 rounded-full transition-all duration-300 bg-stone-300 dark:bg-stone-600';
+                }
+            }
+
+            function resetTimer() {
+                clearInterval(timer);
+                timer = setInterval(function() { goTo(current + 1); }, INTERVAL);
+            }
+
+            prevBtn.addEventListener('click', function() { goTo(current - 1); });
+            nextBtn.addEventListener('click', function() { goTo(current + 1); });
+
+            // Pause on hover
+            carousel.addEventListener('mouseenter', function() { clearInterval(timer); });
+            carousel.addEventListener('mouseleave', resetTimer);
+
+            // Swipe support for mobile
+            var startX = 0;
+            carousel.addEventListener('touchstart', function(e) { startX = e.touches[0].clientX; }, { passive: true });
+            carousel.addEventListener('touchend', function(e) {
+                var diff = startX - e.changedTouches[0].clientX;
+                if (Math.abs(diff) > 50) goTo(current + (diff > 0 ? 1 : -1));
+            });
+
+            resetTimer();
+        })();
     </script>
 
 </body>
